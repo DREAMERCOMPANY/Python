@@ -1,4 +1,28 @@
-def es_sano(numero_calorias:int , es_vegetariano:bool)->bool:
+def es_sano(numero_calorias: int, es_vegetariano: bool) -> bool:
+    if numero_calorias < 100 or es_vegetariano:
+        return True
+    else:
+        return False
+
+def contar_calorias(calorias: list) -> float:
+    return round(sum(calorias) * 0.95, 2)
+
+def calcular_costo(dict1: dict, dict2: dict, dict3: dict) -> float:
+    return round(dict1["precio"] + dict2["precio"] + dict3["precio"], 2)
+
+def calcular_rentabilidad(precio: float, ingrediente1: dict, ingrediente2: dict, ingrediente3: dict) -> float:
+    costo_ingredientes = calcular_costo(ingrediente1, ingrediente2, ingrediente3)
+    return round(precio - costo_ingredientes, 2)
+
+def mejor_producto(producto1: dict, producto2: dict, producto3: dict, producto4: dict) -> str:
+    productos = [producto1, producto2, producto3, producto4]
+    producto_mas_rentable = max(productos, key=lambda x: x["rentabilidad"])
+    return producto_mas_rentable["nombre"]
+
+
+
+
+""" def es_sano(numero_calorias:int , es_vegetariano:bool)->bool:
     if(numero_calorias < 100 or es_vegetariano == True):
         return True
     else:
@@ -30,7 +54,7 @@ def mejor_producto(producto1:dict, producto2:dict , producto3:dict , producto4:d
         if(producto["rentabilidad"] > producto_mas_rentable["rentabilidad"]):
             producto_mas_rentable = producto
     
-    return producto_mas_rentable["nombre"]
+    return producto_mas_rentable["nombre"] """
 
 
 
