@@ -4,7 +4,7 @@ def es_sano(numero_calorias:int , es_vegetariano:bool)->bool:
     else:
         return False
 
-def contar_calorias(calorias:list):
+def contar_calorias(calorias:list)->float:
     sum = 0
     for caloria in calorias:
         sum += caloria
@@ -17,7 +17,7 @@ def calcular_costo(dict1:dict , dict2:dict , dict3:dict)-> float:
         sumaCosto += cost["precio"]
     return round(sumaCosto, 2)
 
-def calcular_rentabilidad(precio:float, ingrediente1:dict , ingrediente2:dict , dingrediente3:dict) -> float:
+def calcular_rentabilidad(precio:float, ingrediente1:dict , ingrediente2:dict , ingrediente3:dict) -> float:
     costo_ingredientes = calcular_costo(ingrediente1, ingrediente2, ingrediente3)
     rentabilidad = precio  - costo_ingredientes
     return round(rentabilidad , 2) 

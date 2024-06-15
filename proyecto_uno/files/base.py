@@ -10,8 +10,8 @@ class Base(Ingrediente):
     def get_sabor(self)->str:
         return self.__sabor
     
-    def set_sabor(self, newSabor:str)->str:
-        self.__sabor = newSabor
+    def set_sabor(self, sabor:str)->str:
+        self.__sabor = sabor
     
     #Implementacion metodo abstracto
     def abastecer(self):

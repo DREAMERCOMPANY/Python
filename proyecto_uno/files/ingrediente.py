@@ -2,9 +2,10 @@ from abc import ABC, abstractmethod
 from funciones import *
 
 class Ingrediente:
-    def __init__(self, precio:float, calorias:float, nombre:str,  es_vegetariano:bool):
+    def __init__(self, precio:float, caloria:float, nombre:str,  es_vegetariano:bool):
         self._precio = precio
-        self._calorias = calorias
+        self._caloria = caloria
+        self._calorias = [self._caloria]
         self._nombre = nombre
         self._inventario = 0
         self._vegetariano = es_vegetariano
@@ -17,6 +18,12 @@ class Ingrediente:
     #Metodo llamando a funcion 'es_sano'
     def es_sano(self)->bool:
         es_sano(self._calorias, self._vegetariano)
+    
+    def get_calorias(self):
+        return self._calorias
+    
+    def add_calorias(self, caloria):
+        self._calorias.append(caloria)
     
     # getters, setter
 
